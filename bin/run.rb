@@ -34,11 +34,11 @@ def open_book
         puts 'History of the Rings of Power'
         ring_selection = prompt.select('', ['All', 'Good Rings', 'Evil Rings', 'Lost Rings'])
             if ring_selection == "All"
-                #method for returning all rings
+                Ring.all_rings
             elsif ring_selection == 'Good Rings'
-                #method for returning aligned rings
-            elsif ring_selection == 'Bad Rings'
-                #method for returning aligned rings
+                Ring.all_good_rings
+            elsif ring_selection == 'Evil Rings'
+                Ring.all_evil_rings
             else 
                 #returns lost rings by checking the ring location for 'Lost'
             end
@@ -70,7 +70,7 @@ def open_book
         #if a bad ring has been destroyed puts a positive message
         #if the One Ring has been destroyed....EAGLES!
         end
-    else
+    # else
         # Close the Book
 end
 

@@ -4,22 +4,88 @@ class Ring < ActiveRecord::Base
     has_many :characters, through: :ring_bearers
 
   
-    def self.all_characters
+    def self.all_rings
         prompt = TTY::Prompt.new
-        character_array = Character.all.map {|people| people.name}
-        character_name = prompt.select(" ", character_array)
-        chr_info = Character.all.find_by(name: character_name)
-        puts "Name: #{chr_info.name}"
-        puts "Age: #{chr_info.age}"
-        puts "Race: #{chr_info.race}"
-        rings_array = RingBearer.all.select {|ring_bearer| ring_bearer.character_id == chr_info.id}
+        ring_array = Ring.all.map {|ring| ring.name}
+        ring_name = prompt.select(" ", ring_array)
         # binding.pry
-        if rings_array.length > 0
-            puts "Current Ring: #{Ring.all.find_by(id: rings_array.last.ring_id).name}"
+        ring_info = Ring.all.find_by(name: ring_name)
+        puts "Name: #{ring_info.name}"
+        puts "Maker: #{ring_info.maker}"
+        puts "Power: #{ring_info.power}"
+        puts "Alignment: #{ring_info.alignment}"
+        puts "Location: #{ring_info.location}"
+        puts "Creation Date: #{ring_info.creation_date}"
+        characters_array = RingBearer.all.select {|ring_bearer| ring_bearer.ring_id == ring_info.id}
+        if characters_array.length > 0
+            puts "Current Bearer: #{Character.all.find_by(id: characters_array.last.character_id).name}"
         else
-            puts "This person is not wearing a ring."
+            puts "This ring is not currently being worn."
         end
     end
+
+    def self.all_good_rings
+        prompt = TTY::Prompt.new
+        ring_array = Ring.all.select {|ring| ring.alignment == "Good"}
+        good_ring_names = ring_array.map {|ring| ring.name}
+        ring_name = prompt.select(" ", good_ring_names)
+        #  binding.pry
+        ring_info = Ring.all.find_by(name: ring_name)
+        puts "Name: #{ring_info.name}"
+        puts "Maker: #{ring_info.maker}"
+        puts "Power: #{ring_info.power}"
+        puts "Alignment: #{ring_info.alignment}"
+        puts "Location: #{ring_info.location}"
+        puts "Creation Date: #{ring_info.creation_date}"
+        characters_array = RingBearer.all.select {|ring_bearer| ring_bearer.ring_id == ring_info.id}
+        if characters_array.length > 0
+            puts "Current Bearer: #{Character.all.find_by(id: characters_array.last.character_id).name}"
+        else
+            puts "This ring is not currently being worn."
+        end
+    end
+
+    def self.all_evil_rings
+        prompt = TTY::Prompt.new
+        ring_array = Ring.all.select {|ring| ring.alignment == "Evil"}
+        evil_ring_names = ring_array.map {|ring| ring.name}
+        ring_name = prompt.select(" ", evil_ring_names)
+        # binding.pry
+        ring_info = Ring.all.find_by(name: ring_name)
+        puts "Name: #{ring_info.name}"
+        puts "Maker: #{ring_info.maker}"
+        puts "Power: #{ring_info.power}"
+        puts "Alignment: #{ring_info.alignment}"
+        puts "Location: #{ring_info.location}"
+        puts "Creation Date: #{ring_info.creation_date}"
+        characters_array = RingBearer.all.select {|ring_bearer| ring_bearer.ring_id == ring_info.id}
+        if characters_array.length > 0
+            puts "Current Bearer: #{Character.all.find_by(id: characters_array.last.character_id).name}"
+        else
+            puts "This ring is not currently being worn."
+        end
+    end
+
+    def self.all_lost_rings
+        prompt = TTY::Prompt.new
+        ring_array = Ring.all.map {|ring| ring.name}
+        ring_name = prompt.select(" ", ring_array)
+        # binding.pry
+        ring_info = Ring.all.find_by(name: ring_name)
+        puts "Name: #{ring_info.name}"
+        puts "Maker: #{ring_info.maker}"
+        puts "Power: #{ring_info.power}"
+        puts "Alignment: #{ring_info.alignment}"
+        puts "Location: #{ring_info.location}"
+        puts "Creation Date: #{ring_info.creation_date}"
+        characters_array = RingBearer.all.select {|ring_bearer| ring_bearer.ring_id == ring_info.id}
+        if characters_array.length > 0
+            puts "Current Bearer: #{Character.all.find_by(id: characters_array.last.character_id).name}"
+        else
+            puts "This ring is not currently being worn."
+        end
+    end
+    
 
     # def ring_lost
     #     if self.location == "unknown"
