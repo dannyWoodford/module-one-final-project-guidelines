@@ -12,7 +12,7 @@ user_name = gets.chomp
 
 puts "Hello #{user_name}"
 
-def open_book
+def self.open_book
     prompt = TTY::Prompt.new
     puts "TABLE OF CONTENTS"
     puts "Please make a selection in the Table of Contents."
@@ -65,7 +65,7 @@ end
 
 
 
-open_book
+self.open_book
 
 # ring = prompt.select("Choose a ring", ["The one Ring", "Vilya", "Narya", "Ring Of Men"])
 
@@ -77,3 +77,6 @@ open_book
 
 
 puts "HELLO WORLD"
+
+
+

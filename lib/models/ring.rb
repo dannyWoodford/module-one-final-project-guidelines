@@ -113,21 +113,6 @@ class Ring < ActiveRecord::Base
     end
 
 
-
-    # def ring_lost
-    #     if self.location == "unknown"
-    #         puts "The ring is lost"
-    #     else
-    #         puts "No, #{self.name} is in #{self.location}."
-    #     end
-    # end
-
-    # def ring_found(new_location)
-    #     self.location = new_location
-    #     puts "The #{self.name}, is now in #{self.location}"
-    #     self.update(location: new_location)
-    # end
-
     def self.forge_ring
           puts "Ring Forge"
         prompt = TTY::Prompt.new
@@ -155,6 +140,17 @@ class Ring < ActiveRecord::Base
         if active_rings.length > 0 
             if choice == "Yes, I want to destroy a ring!"
                 ring_choice = prompt.select("Please choose a Ring of Power to destroy", active_rings)
+                #RIDDLES********************************************************************
+                gollum_result = Riddle.gollum_riddles
+                if gollum_result == "failed"
+                    return "You failed in your quest to destroy a Ring of Power"
+                end
+
+                bilbo_result = Riddle.bilbo_riddles
+                if bilbo_result == "failed"
+                    return "You failed in your quest to destroy a Ring of Power"
+                end
+                #RIDDLES********************************************************************
                 deleted_ring = Ring.all.find {|ring| ring.name == ring_choice}
                 deleted_ring.update(deleted: "Yes")
                     if deleted_ring.alignment == "Good"
@@ -169,8 +165,6 @@ class Ring < ActiveRecord::Base
         else
             puts "There are no Rings of Power to destroy! Forge a new one."
         end
-        
-        # binding.pry
 
     end
 

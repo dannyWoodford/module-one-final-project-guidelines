@@ -1,3 +1,6 @@
+require 'pry'
+
+
 Character.destroy_all
 c1 = Character.create(name: "Frodo Baggins", age: 50, race: "Hobbit")
 c2 = Character.create(name: "Bilbo Baggins", age: 51, race: "Hobbit")
@@ -18,3 +21,4 @@ RingBearer.create(character_id: c1.id, ring_id: r1.id, date_captured: "1940", da
 RingBearer.create(character_id: c2.id, ring_id: r2.id, date_captured: "190", date_lost: "1200")
 RingBearer.create(character_id: c2.id, ring_id: r2.id, date_captured: "940", date_lost: "2019")
 RingBearer.create(character_id: c4.id, ring_id: r3.id, date_captured: "140", date_lost: "19")
+
