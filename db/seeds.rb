@@ -11,7 +11,7 @@ Ring.destroy_all
 r1 = Ring.create(name: "The One Ring", maker: "Sauron", power: "Control all Rings", alignment: "Evil", location: "Mordor", creation_date: 1432)
 r2 = Ring.create(name: "Vilya", maker: "Sauron", power: "Healing", alignment: "Good", location: "Rivendell", creation_date: 1781)
 r3 = Ring.create(name: "Narya", maker: "Sauron", power: "Inspiration", alignment: "Good", location: "Gray Havens", creation_date: 1643)
-r4 = Ring.create(name: "Ring of Men", maker: "Sauron", power: "Sorcery", alignment: "Evil", location: "Barad-Ur", creation_date: 1697)
+r4 = Ring.create(name: "Ring of Men", maker: "Sauron", power: "Sorcery", alignment: "Evil", location: "Lost", creation_date: 1697)
 
 RingBearer.destroy_all
 RingBearer.create(character_id: c1.id, ring_id: r1.id, date_captured: "1940", date_lost: "1949")

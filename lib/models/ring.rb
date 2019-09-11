@@ -68,8 +68,9 @@ class Ring < ActiveRecord::Base
 
     def self.all_lost_rings
         prompt = TTY::Prompt.new
-        ring_array = Ring.all.map {|ring| ring.name}
-        ring_name = prompt.select(" ", ring_array)
+        ring_array = Ring.all.select {|ring| ring.location == "Lost"}
+        lost_ring_names = ring_array.map {|ring| ring.name}
+        ring_name = prompt.select(" ", lost_ring_names)
         # binding.pry
         ring_info = Ring.all.find_by(name: ring_name)
         puts "Name: #{ring_info.name}"
@@ -80,11 +81,33 @@ class Ring < ActiveRecord::Base
         puts "Creation Date: #{ring_info.creation_date}"
         characters_array = RingBearer.all.select {|ring_bearer| ring_bearer.ring_id == ring_info.id}
         if characters_array.length > 0
-            puts "Current Bearer: #{Character.all.find_by(id: characters_array.last.character_id).name}"
+            puts "Last Known Bearer: #{Character.all.find_by(id: characters_array.last.character_id).name}"
         else
             puts "This ring is not currently being worn."
         end
+        #the variable is for the Ring Found method
+        name_selection = ring_info.name
+        return name_selection
+        # binding.pry
     end
+
+    def self.ring_found
+        prompt = TTY::Prompt.new
+        puts "Congratulations on finding a Ring of Power! Amazing!!"
+        puts "Below are all the lost Rings of Power. Which one did you find?"
+        name = self.all_lost_rings
+        ring = Ring.all.find {|ring| ring.name == name}
+        new_location = prompt.ask ("Where did you find #{ring.name}?")
+        ring.update(location: new_location)
+        new_bearer = prompt.ask ("Who currently has #{ring.name}?")
+        #ring.update(current_bearer: new_bearer)
+        # binding.pry
+
+    end
+
+
+
+
     
 
     # def ring_lost
@@ -110,8 +133,8 @@ class Ring < ActiveRecord::Base
         ring_power = prompt.ask ("What is the special power of #{ring_name}?")
         ring_alignment  = prompt.select("Is #{ring_name} good or evil?", ["Good", "Evil"])
         ring_creation_date = prompt.ask ("What year was #{ring_name} made?")
-        # binding.pry
-        while ring_creation_date.to_i > 2020 or ring_creation_date.to_i < 0
+        #  binding.pry
+        while ring_creation_date.to_i > 2020 or ring_creation_date.to_i < 1
             # binding.pry
             puts "Invalid input. Please enter a valid year."
             ring_creation_date = prompt.ask ("What year was #{ring_name} made?")

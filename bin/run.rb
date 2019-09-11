@@ -39,16 +39,15 @@ def open_book
                 Ring.all_good_rings
             elsif ring_selection == 'Evil Rings'
                 Ring.all_evil_rings
-            else 
-                #returns lost rings by checking the ring location for 'Lost'
+            elsif ring_selection == 'Lost Rings'
+                Ring.all_lost_rings
             end
 
     elsif selection == "Forge a new Ring"
         Ring.forge_ring
     elsif selection == "Ring Found!"
-        puts "Congratulations on finding a Ring of Power! Amazing!!"
-        #Prompts user for ring name and new locatin
-        #if the ring name does not exist then we will puts "Sorry, the ring you have entered does not exist."
+        
+        Ring.ring_found
 
     elsif selection == "Add Person"
         puts "Tell us his/her story!"
@@ -60,15 +59,14 @@ def open_book
         #if ring name doesnt exist puts "Sorry, the ring you have entered does not exist."
 
     elsif selection == "A Ring of Power has been destroyed!"
-        # puts "Welcome to Mount Doom"
-        # puts "Do you wish to cast a Ring of Power into the fires?"
-        # prompt.select(" ", ["Yes, I wish to destroy a Ring!", "No, I do not."])
         puts "Has a Ring of Power been cast in to the fires of Mount Doom?"
         prompt.select(" ", ["Yes, a ring has been destroyed!", "No, it has not."])
         #will prompt for a name and then delete the foreign key conenctions on the RingBearer instance?
+        #put in a obstacle to destroy a ring
         #if a good ring has been destroyed puts a negative message
         #if a bad ring has been destroyed puts a positive message
         #if the One Ring has been destroyed....EAGLES!
+
         end
     # else
         # Close the Book
