@@ -17,7 +17,7 @@ def open_book
     puts "TABLE OF CONTENTS"
     puts "Please make a selection in the Table of Contents."
 
-    selection = prompt.select(' ', ['History of the Rings of Power','History of the Ring Bearers', 'Forge a new Ring', 'Ring Found!', 'Add Person','Change Ring Bearer', 'A Ring of Power has been destroyed!', 'Close the Book' ])
+    selection = prompt.select(' ', ['History of the Rings of Power','History of the Ring Bearers', 'Forge a new Ring', 'Ring Found!', 'Add Person','Create a new record of a Ring Bearer', 'Destroy a Ring of Power', 'Close the Book' ])
  
     if selection == 'History of the Ring Bearers'
         puts 'History of the Ring Bearers'
@@ -28,7 +28,7 @@ def open_book
             elsif character_selection == "By Race"
                 Character.all_characters_by_race
             elsif character_selection == "Active Ring Bearers"
-                #returns all those who carry a ring
+                Character.active_ring_bearers
             end
     elsif selection == 'History of the Rings of Power'
         puts 'History of the Rings of Power'
@@ -51,26 +51,19 @@ def open_book
 
     elsif selection == "Add Person"
         puts "Tell us his/her story!"
-        #prompts user for needed info in Character.create
+        Character.add_person
+        open_book
+    elsif selection == "Create a new record of a Ring Bearer"
+        RingBearer.create_ring_bearer
 
-    elsif selection == "Change Ring Bearer"
-        puts "Who has put on the Rings of Power"
-        #prompts ring name, who is wearing it, and its new location.
-        #if ring name doesnt exist puts "Sorry, the ring you have entered does not exist."
-
-    elsif selection == "A Ring of Power has been destroyed!"
-        puts "Has a Ring of Power been cast in to the fires of Mount Doom?"
-        prompt.select(" ", ["Yes, a ring has been destroyed!", "No, it has not."])
-        #will prompt for a name and then delete the foreign key conenctions on the RingBearer instance?
-        #put in a obstacle to destroy a ring
-        #if a good ring has been destroyed puts a negative message
-        #if a bad ring has been destroyed puts a positive message
-        #if the One Ring has been destroyed....EAGLES!
-
-        end
+    elsif selection == "Destroy a Ring of Power"
+        Ring.delete_ring
+    end
     # else
         # Close the Book
 end
+
+
 
 open_book
 

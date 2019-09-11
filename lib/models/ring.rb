@@ -91,6 +91,14 @@ class Ring < ActiveRecord::Base
         # binding.pry
     end
 
+    #Helper method--------------------------------------------
+    def self.alive_rings 
+        rings = Ring.all.select{ |ring| ring.deleted == nil }
+        rings.map {|ring| ring.name}
+    end
+    #Helper method--------------------------------------------
+
+
     def self.ring_found
         prompt = TTY::Prompt.new
         puts "Congratulations on finding a Ring of Power! Amazing!!"
@@ -99,16 +107,12 @@ class Ring < ActiveRecord::Base
         ring = Ring.all.find {|ring| ring.name == name}
         new_location = prompt.ask ("Where did you find #{ring.name}?")
         ring.update(location: new_location)
-        new_bearer = prompt.ask ("Who currently has #{ring.name}?")
-        #ring.update(current_bearer: new_bearer)
-        # binding.pry
-
+        # new_name = prompt.ask ("Who currently has #{ring.name}?")
+        # new_bearer = Character.all.find_or_create_by {|person| person.name == new_name}
+        # RingBearer.create(character_)
     end
 
 
-
-
-    
 
     # def ring_lost
     #     if self.location == "unknown"
@@ -143,5 +147,31 @@ class Ring < ActiveRecord::Base
 
     end
 
+    def self.delete_ring
+        prompt = TTY::Prompt.new
+        puts "Welcome to Mount Doom"
+        choice = prompt.select("Do you wish to cast a Ring into the fire?", ["Yes, I want to destroy a ring!", "No, I'll be on my way"])
+        active_rings = Ring.alive_rings
+        if active_rings.length > 0 
+            if choice == "Yes, I want to destroy a ring!"
+                ring_choice = prompt.select("Please choose a Ring of Power to destroy", active_rings)
+                deleted_ring = Ring.all.find {|ring| ring.name == ring_choice}
+                deleted_ring.update(deleted: "Yes")
+                    if deleted_ring.alignment == "Good"
+                        puts "A Good Ring of Power has been destroyed! Darkness is spreading!"
+                    else 
+                        puts "An Evil Ring of Power has been destroyed! The scales have shifted!"
+                    end
+            else
+                puts "You will be returned to the Table of Contents" 
+                open_book    
+            end
+        else
+            puts "There are no Rings of Power to destroy! Forge a new one."
+        end
+        
+        # binding.pry
+
+    end
 
 end

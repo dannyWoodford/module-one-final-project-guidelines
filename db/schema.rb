@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190910202509) do
+ActiveRecord::Schema.define(version: 20190911152001) do
 
   create_table "characters", force: :cascade do |t|
     t.string  "name"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 20190910202509) do
     t.integer "ring_id"
     t.string  "date_captured"
     t.string  "date_lost"
-    t.string  "current_bearer"
-    t.string  "deleted"
   end
 
   create_table "rings", force: :cascade do |t|
@@ -34,6 +32,7 @@ ActiveRecord::Schema.define(version: 20190910202509) do
     t.string  "alignment"
     t.string  "location"
     t.integer "creation_date"
+    t.string  "deleted"
   end
 
 end

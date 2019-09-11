@@ -15,6 +15,6 @@ r4 = Ring.create(name: "Ring of Men", maker: "Sauron", power: "Sorcery", alignme
 
 RingBearer.destroy_all
 RingBearer.create(character_id: c1.id, ring_id: r1.id, date_captured: "1940", date_lost: "1949")
-RingBearer.create(character_id: c2.id, ring_id: r2.id, date_captured: "190", date_lost: "1949")
-RingBearer.create(character_id: c2.id, ring_id: r2.id, date_captured: "940", date_lost: "1949", deleted: "Yes")
-RingBearer.create(character_id: c4.id, ring_id: r3.id, date_captured: "140", date_lost: "1949")
+RingBearer.create(character_id: c2.id, ring_id: r2.id, date_captured: "190", date_lost: "1200")
+RingBearer.create(character_id: c2.id, ring_id: r2.id, date_captured: "940", date_lost: "2019")
+RingBearer.create(character_id: c4.id, ring_id: r3.id, date_captured: "140", date_lost: "19")
