@@ -3629,8 +3629,7 @@ gif60 = <<-HAM
 end #class end
 
 
-gif_runner = Gif.new
-gif_runner.run_gif
+
 
 
 

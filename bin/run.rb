@@ -1,20 +1,21 @@
 require_relative '../config/environment'
 require "tty-prompt"
 
+pid = fork{exec 'afplay', "concerning_hobbits.mp3"}
+
+
+
 prompt = TTY::Prompt.new
 
 # gif_runner = Gif.new
+gif_runner = Gif.new
+gif_runner.run_gif
 
 
-<<<<<<< HEAD
-puts "Welcome Middle Earth Historian!"
-puts "This book is record for all the Rings of Power and of the brave men and women who bore them."
-# gif_runner.run_gif
-puts "What is your name scholar?"
-=======
 intro_text = <<-INT
-                                                Welcome Middle Earth Historian
->>>>>>> 09d6ea6b4851aa78c346dec8117c61a2f0d8bf66
+
+
+
 
                               *********************************************************************         
                                                    
@@ -31,6 +32,9 @@ intro_text = <<-INT
                                         In the Land of Mordor where the Shadows lie.
 
                               *********************************************************************
+
+
+                                                 Welcome Middle Earth Historian
 
                      This book is record for all the Rings of Power and of the brave men and women who bore them
                                     
@@ -105,8 +109,10 @@ def self.open_book
     elsif selection == "Destroy a Ring of Power"
         Ring.delete_ring
     end
-    # else
-        # Close the Book
+
+
+    pid = fork{ exec 'killall', "afplay" }
+        
 end
 
 
