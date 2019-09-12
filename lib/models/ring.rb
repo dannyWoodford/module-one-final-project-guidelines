@@ -151,13 +151,17 @@ class Ring < ActiveRecord::Base
                     return "You failed in your quest to destroy a Ring of Power"
                 end
                 #RIDDLES********************************************************************
-                deleted_ring = Ring.all.find {|ring| ring.name == ring_choice}
-                deleted_ring.update(deleted: "Yes")
-                    if deleted_ring.alignment == "Good"
-                        puts "A Good Ring of Power has been destroyed! Darkness is spreading!"
-                    else 
-                        puts "An Evil Ring of Power has been destroyed! The scales have shifted!"
-                    end
+                if ring_choice == "The One Ring"
+                    Eagle.call_the_eagles
+                else                
+                    deleted_ring = Ring.all.find {|ring| ring.name == ring_choice}
+                    deleted_ring.update(deleted: "Yes")
+                        if deleted_ring.alignment == "Good"
+                               puts "A Good Ring of Power has been destroyed! Darkness is spreading!"
+                        else 
+                               puts "An Evil Ring of Power has been destroyed! The scales have shifted to the Light!"
+                        end
+                end
             else
                 puts "You will be returned to the Table of Contents" 
                 open_book    

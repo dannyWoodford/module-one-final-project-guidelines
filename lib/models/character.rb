@@ -6,7 +6,7 @@ class Character < ActiveRecord::Base
     def self.all_characters
         prompt = TTY::Prompt.new
         character_array = Character.all.map {|people| people.name}
-        character_name = prompt.select(" ", character_array)
+        character_name = prompt.select(" ", character_array, per_page: 1500)
         chr_info = Character.all.find_by(name: character_name)
         puts "Name: #{chr_info.name}"
         puts "Age: #{chr_info.age}"
@@ -26,7 +26,7 @@ class Character < ActiveRecord::Base
         race = prompt.select("Choose a Race", race_array.uniq)
         race_group = Character.all.select {|instance| instance.race == race }
         group_names = race_group.map { |guy| guy.name}
-        person = prompt.select("Below is the list of each #{race}", group_names)
+        person = prompt.select("Below is the list of each #{race}", group_names, per_page: 150)
         chr_info = Character.all.find_by(name: person)
             puts "Name: #{chr_info.name}"
             puts "Age: #{chr_info.age}"
@@ -57,7 +57,7 @@ class Character < ActiveRecord::Base
                                  Character.all.select {|character| character.id == id_number}
                             end.flatten
         character_array = character_objects.map {|object| object.name}
-        character_name = prompt.select(" ", character_array)
+        character_name = prompt.select(" ", character_array, per_page: 150)
         chr_info = Character.all.find_by(name: character_name)
         puts "Name: #{chr_info.name}"
         puts "Age: #{chr_info.age}"
@@ -84,7 +84,7 @@ class Character < ActiveRecord::Base
                 puts "Invalid input. Please try again."
                 age = prompt.ask("How old is #{name}?")
             end
-            race = prompt.select("What race is #{name}?", ["Man", "Elf", "Wizard", "Hobbit", "Ent", "Dwarf", "Orc", "Troll", "Uruk-hai"])
+            race = prompt.select("What race is #{name}?", ["Man", "Elf", "Wizard", "Hobbit", "Ent", "Dwarf", "Dragon", "Orc", "Uruk-Hai"], per_page: 15)
             Character.create(name: name, age: age, race: race)
             puts "Congrats on adding Dave to the History Books!"
             puts "Name: #{name}"
