@@ -6,21 +6,64 @@ prompt = TTY::Prompt.new
 # gif_runner = Gif.new
 
 
+<<<<<<< HEAD
 puts "Welcome Middle Earth Historian!"
 puts "This book is record for all the Rings of Power and of the brave men and women who bore them."
 # gif_runner.run_gif
 puts "What is your name scholar?"
+=======
+intro_text = <<-INT
+                                                Welcome Middle Earth Historian
+>>>>>>> 09d6ea6b4851aa78c346dec8117c61a2f0d8bf66
 
-user_name = gets.chomp
+                              *********************************************************************         
+                                                   
+                                        Ash nazg durbatulûk, ash nazg gimbatul,
+                                        Ash nazg thrakutulûk agh burzum-ishi krimpatul.
 
-puts "Hello #{user_name}"
+                                        Three Rings for the Elven-kings under the sky,
+                                        Seven for the dwarf-lords in their halls of stone,
+                                        Nine for Mortal Men doomed to die,
+                                        One for the Dark Lord on his dark throne,
+                                        In the Land of Mordor where the Shadows lie.
+                                        One Ring to rule them all, One Ring to find them,
+                                        One Ring to bring them all and in the darkness bind them
+                                        In the Land of Mordor where the Shadows lie.
+
+                              *********************************************************************
+
+                     This book is record for all the Rings of Power and of the brave men and women who bore them
+                                    
+                                                
+
+INT
+
+puts intro_text
+
+# user_name = gets.chomp
+
+# hello_name = <<-TTR
+#                                                         Hello #{user_name}!
+
+
+# TTR
+
+# puts hello_name
 
 def self.open_book
     prompt = TTY::Prompt.new
-    puts "TABLE OF CONTENTS"
-    puts "Please make a selection in the Table of Contents."
 
-    selection = prompt.select(' ', ['History of the Rings of Power','History of the Ring Bearers', 'Forge a new Ring', 'Ring Found!', 'Add Person','Create a new record of a Ring Bearer', 'Destroy a Ring of Power', 'Close the Book' ])
+    toc_text = <<-TOC
+                                                        TABLE OF CONTENTS
+
+                                                ---------------------------------        
+                                        Please make a selection in the Table of Contents
+
+
+    TOC
+    
+    puts toc_text
+    selection = prompt.select(' ', ['History of the Rings of Power','History of the Ring Bearers', 'Forge a new Ring', 'Ring Found!', 'Add Person','Create a new record of a Ring Bearer', 'Destroy a Ring of Power', 'Close the Book'], per_page: 15)
  
     if selection == 'History of the Ring Bearers'
         puts 'History of the Ring Bearers'
