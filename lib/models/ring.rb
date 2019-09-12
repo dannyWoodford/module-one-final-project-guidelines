@@ -6,7 +6,9 @@ class Ring < ActiveRecord::Base
   
     def self.all_rings
         prompt = TTY::Prompt.new
+        font = TTY::Font.new(:straight)
         ring_array = Ring.all.map {|ring| ring.name}
+        # ham = ring_array.map{ |h|  font.write("#{h}")}
         ring_name = prompt.select(" ", ring_array)
         # binding.pry
         ring_info = Ring.all.find_by(name: ring_name)
@@ -93,7 +95,7 @@ class Ring < ActiveRecord::Base
 
     #Helper method--------------------------------------------
     def self.alive_rings 
-        rings = Ring.all.select{ |ring| ring.deleted == nil }
+        rings = Ring.all.select{ |ring| ring.deleted == nil}
         rings.map {|ring| ring.name}
     end
     #Helper method--------------------------------------------

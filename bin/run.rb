@@ -3,9 +3,12 @@ require "tty-prompt"
 
 prompt = TTY::Prompt.new
 
+# gif_runner = Gif.new
+
 
 puts "Welcome Middle Earth Historian!"
 puts "This book is record for all the Rings of Power and of the brave men and women who bore them."
+# gif_runner.run_gif
 puts "What is your name scholar?"
 
 user_name = gets.chomp
