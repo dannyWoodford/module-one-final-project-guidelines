@@ -1,20 +1,20 @@
 require_relative '../config/environment'
 require "tty-prompt"
+require 'colorize'
 
 prompt = TTY::Prompt.new
 
-# gif_runner = Gif.new
+gif_runner = Gif.new
 
+gif_runner.run_gif
 
-<<<<<<< HEAD
-puts "Welcome Middle Earth Historian!"
-puts "This book is record for all the Rings of Power and of the brave men and women who bore them."
-# gif_runner.run_gif
-puts "What is your name scholar?"
-=======
+pid = fork{ exec 'afplay', "The Lord Of The Rings The Return Of The King - The Eagles are coming !.mp3" }
+
+puts "  "
+puts "  "
+puts "  "
 intro_text = <<-INT
                                                 Welcome Middle Earth Historian
->>>>>>> 09d6ea6b4851aa78c346dec8117c61a2f0d8bf66
 
                               *********************************************************************         
                                                    
@@ -38,7 +38,7 @@ intro_text = <<-INT
 
 INT
 
-puts intro_text
+puts intro_text.colorize(:white)
 
 # user_name = gets.chomp
 
