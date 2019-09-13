@@ -8,8 +8,8 @@ pid = fork{exec 'afplay', "concerning_hobbits.mp3"}
 
 prompt = TTY::Prompt.new
 
-# gif_runner = Gif.new
-# gif_runner.run_gif
+gif_runner = Gif.new
+gif_runner.run_gif
 
 #WRAITH--------------------------------------------------------------------------
 RingBearer.all.each do |bearer|

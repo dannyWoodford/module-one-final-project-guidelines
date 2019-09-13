@@ -6,6 +6,7 @@ class Gif
 
 
 text1 = <<-HAM
+
          ___ . .  _                                                                                             
 "T$$$P"   |  |_| |_                                                                                             
  :$$$     |  | | |_                                                                                             
@@ -24,6 +25,7 @@ text1 = <<-HAM
 
 
 text2 = <<-HAM
+
          ___ . .  _                                                                                             
 "T$$$P"   |  |_| |_                                                                                             
  :$$$     |  | | |_                                                                                             
@@ -42,6 +44,7 @@ text2 = <<-HAM
 
 
 text3 = <<-HAM
+
          ___ . .  _                                                                                             
 "T$$$P"   |  |_| |_                                                                                             
  :$$$     |  | | |_                                                                                             
@@ -60,6 +63,7 @@ text3 = <<-HAM
 
 
 text4 = <<-HAM
+
          ___ . .  _                                                                                             
 "T$$$P"   |  |_| |_                                                                                             
  :$$$     |  | | |_                                                                                             
@@ -78,6 +82,7 @@ text4 = <<-HAM
 
 
 text5 = <<-HAM
+
          ___ . .  _                                                                                             
 "T$$$P"   |  |_| |_                                                                                             
  :$$$     |  | | |_                                                                                             
@@ -97,6 +102,7 @@ text5 = <<-HAM
 
 
 text6 = <<-HAM
+
          ___ . .  _                                                                                          
 "T$$$P"   |  |_| |_                                                                                          
  :$$$     |  | | |_                                                                                          
@@ -115,6 +121,7 @@ text6 = <<-HAM
 
 
 text7 = <<-HAM
+
          ___ .. _                                                                                          
 "T$$$P"   |  |||_                                                                                          
  :$$$     |  |||_                                                                                          
@@ -133,6 +140,7 @@ text7 = <<-HAM
 
 
 text8   = <<-HAM
+
          __ .  _                                                                                        
 "T$$$P"  |  | |_                                                                                        
  :$$$    |  | |_                                                                                        
@@ -151,6 +159,7 @@ text8   = <<-HAM
 
 
 text9 = <<-HAM
+
       ___.  _                                                                                       
 "T$$$P   | | |_                                                                                       
  :$$$    | | |_                                                                                       
@@ -169,6 +178,7 @@ text9 = <<-HAM
 
 
 text10 = <<-HAM
+
        ___  _                                                                                      
 "T$$$"   |  |_                                                                                      
  :$$$    |  |_                                                                                      
@@ -187,6 +197,7 @@ text10 = <<-HAM
 
 
 text11 = <<-HAM
+
        ___.                                                                                     
  "T$$$P   |  _                                                                                    
   :$$$    |  _                                                                                    
@@ -205,6 +216,7 @@ text11 = <<-HAM
 
 
 text12 = <<-HAM
+
       ___                                                                                    
    "T$$$P  | |_                                                                                  
     :$$$   | |_                                                                                  
@@ -223,6 +235,7 @@ text12 = <<-HAM
 
 
 text13 = <<-HAM
+
  __ . _                                                                                  
    "T$$$  | ||                                                                                   
     :$$$  | ||                                                                                   
@@ -241,6 +254,7 @@ text13 = <<-HAM
 
 
 text14 = <<-HAM
+
      ____                                                                               
       "T$$$  | _                                                                               
        :$$$  | _                                                                               
@@ -259,6 +273,7 @@ text14 = <<-HAM
 
 
 text15 = <<-HAM
+
     __                                                                           
         "T$$$                                                                             
          :$$$                                                                             
@@ -277,6 +292,7 @@ text15 = <<-HAM
 
 
 text16 = <<-HAM
+
                  _                                                                          
            "T$$$                                                                            
             :$$$                                                                            
@@ -296,6 +312,7 @@ text16 = <<-HAM
 
 
 text17 = <<-HAM 
+
               +m$                "T$$$$$$$b.
               h$$                  BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
               y$$    .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -312,6 +329,7 @@ HAM
 
 
 text18 = <<-HAM 
+
             +m$$dN+               "T$$$$$$$b.
              -h$$                   BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
              `y$$     .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -328,6 +346,7 @@ HAM
 
 
 text19 = <<-HAM 
+
           +m$$dN+                  "T$$$$$$$b.
            -h$$$                    BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
            `y$$$:+    .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -344,6 +363,7 @@ HAM
 
 
 text20 = <<-HAM 
+
         +m$$dN+                     "T$$$$$$$b.
          -h$$$                       BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
          `y$$$::d.+    .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -360,6 +380,7 @@ HAM
 
 
 text21 = <<-HAM 
+
       +m$$dN+                         "T$$$$$$$b.
        -h$$$                           BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
        `y$$$::hNd.+.     .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -376,6 +397,7 @@ HAM
 
 
 text22 = <<-HAM 
+
     +m$$dN+                              "T$$$$$$$b.
      -h$$$                                BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
      `y$$$::hsNdh.+y.  +.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -392,6 +414,7 @@ HAM
 
 
 text23 = <<-HAM 
+
   +m$$dN+                                      "T$$$$$$$b.
    -h$$$                                        BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
    `y$$$::hsN/dh.+yho. sd:  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -408,6 +431,7 @@ HAM
 
 
 text24 = <<-HAM 
+
 +m$$dN+                                            "T$$$$$$$b.
  -h$$$                                              BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$$$::: hsN/dhy.+hyho. $sd:N  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -423,7 +447,8 @@ text24 = <<-HAM
 HAM
 
 
-text25 = <<-HAM 
+text25 = <<-HAM
+
 +m$$$dNN+                                                   "T$$$$$$$b.
  -h$y$$:                                                     BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+$$-::: .hsN//dhys.+hysho. /$syd:NN  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -440,6 +465,7 @@ HAM
 
 
 text26 = <<-HAM 
+
 +m$$$y$dNN+                                                         "T$$$$$$$b.
  -h$y y$$:                                   ``                      BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+ /$$-::: .ohsN//ddhysd.+hysoho. /$sydy:NNo  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -456,6 +482,7 @@ HAM
 
 
 text27 = <<-HAM 
+
 +m$$$ys$dNN+                                                                   "T$$$$$$$b.
  -h$y  y$$:                                   ``                                BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+  /$$-::::: .ohssN//dddhyssd .+hysoho.  /$Nsydy: NNo  s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -471,7 +498,8 @@ text27 = <<-HAM
 HAM
 
 
-text28 = <<-HAM 
+text28 = <<-HAM
+
 +m$$$y`s$dNN+                                                                           "T$$$$$$$b.
  -h$y   y$$:                                   ``                                        BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+   /$$-::::: .ohsshN//ddddhyssd  .+hysoydho.  /$NNsydy:  NNo   s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -490,6 +518,7 @@ HAM
 
 
 text29 = <<-HAM 
+
 +m$$$y` s$dNN+                                                                                    "T$$$$$$$b.
  -h$y    y$$:                                   ``                                                 BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+    /$$--:::::` .ohssshN//$ddddhyssd  .+hysooydho.  `/$NNssydy:  .NNo    s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -506,6 +535,7 @@ HAM
 
 
 text30 = <<-HAM 
+
 +m$$$y`   s$dNN+                                                                                        "T$$$$$$$b.
  -h$y      y$$:                                      ``                                                   BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+      /$$--:::::`  .ohssshN/ /$ddddhyssd+  .+hysooydho.   `/$NNssydy:  .sNNo    s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -522,6 +552,7 @@ HAM
 
 
 text31 = <<-HAM 
+
 +m$$$y` s$dNN+                                                                                    "T$$$$$$$b.
  -h$y    y$$:                                   ``                                                 BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+    /$$--:::::` .ohssshN//$ddddhyssd  .+hysooydho.  `/$NNssydy:  .NNo    s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -539,6 +570,7 @@ HAM
 
 
 text32 = <<-HAM 
+
 +m$$$y` s$dNN+                                                                                    "T$$$$$$$b.
  -h$y    y$$:                                   ``                                                 BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+    /$$--:::::` .ohssshN//$ddddhyssd  .+hysooydho.  `/$NNssydy:  .NNo    s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -556,6 +588,7 @@ HAM
 
 
 text33 = <<-HAM 
+
 +m$$$y` s$dNN+                                                                                    "T$$$$$$$b.
  -h$y    y$$:                                   ``                                                 BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+    /$$--:::::` .ohssshN//$ddddhyssd  .+hysooydho.  `/$NNssydy:  .NNo    s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -573,6 +606,7 @@ HAM
 
 
 text34 = <<-HAM 
+
 +m$$$y`s$dNN+                                                                           "T$$$$$$$b.
  -h$y   y$$:                                   ``                                        BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+   /$$-::::: .ohsshN//ddddhyssd  .+hysoydho.  /$NNsydy:  NNo   s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -591,6 +625,7 @@ HAM
 
 
 text35 = <<-HAM 
+
 +m$$$ys$dNN+                                                                   "T$$$$$$$b.
  -h$y  y$$:                                   ``                                BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+  /$$-::::: .ohssN//dddhyssd .+hysoho.  /$Nsydy: NNo  s$+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -607,6 +642,7 @@ HAM
 
 
 text36 = <<-HAM 
+
 +m$$$y$dNN+                                                         "T$$$$$$$b.
  -h$y y$$:                                   ``                      BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+ /$$-::: .ohsN//ddhysd.+hysoho. /$sydy:NNo  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -625,6 +661,7 @@ HAM
 
 
 text37 = <<-HAM 
+
 +m$$$dNN+                                                   "T$$$$$$$b.
  -h$y$$:                                                     BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$+$$-::: .hsN//dhys.+hysho. /$syd:NN  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -641,6 +678,7 @@ HAM
 
 
 text38 = <<-HAM 
+
 +m$$dN+                                            "T$$$$$$$b.
  -h$$$                                              BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
  `y$$$::: hsN/dhy.+hyho. $sd:N  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -657,6 +695,7 @@ HAM
 
 
 text39 = <<-HAM 
+
   +m$$dN+                                      "T$$$$$$$b.
    -h$$$                                        BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
    `y$$$::hsN/dh.+yho. sd:  $+.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -673,6 +712,7 @@ HAM
 
 
 text40 = <<-HAM 
+
     +m$$dN+                              "T$$$$$$$b.
      -h$$$                                BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
      `y$$$::hsNdh.+y.  +.   .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -690,6 +730,7 @@ HAM
 
 
 text41 = <<-HAM 
+
       +m$$dN+                         "T$$$$$$$b.
        -h$$$                           BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
        `y$$$::hNd.+.     .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -707,6 +748,7 @@ HAM
 
 
 text42 = <<-HAM 
+
         +m$$dN+                     "T$$$$$$$b.
          -h$$$                       BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
          `y$$$::d.+    .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -724,6 +766,7 @@ HAM
 
 
 text43 = <<-HAM 
+
           +m$$dN+                  "T$$$$$$$b.
            -h$$$                    BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
            `y$$$:+    .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -741,6 +784,7 @@ HAM
 
 
 text44 = <<-HAM 
+
             +m$$dN+               "T$$$$$$$b.
              -h$$                   BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
              `y$$     .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
@@ -758,6 +802,7 @@ HAM
 
 
 text45 = <<-HAM 
+
               +m$                "T$$$$$$$b.
               h$$                  BUG    "Tb      T$b      T$P   .g$P^^T$$  ,gP^^T$$ 
               y$$    .s^s. :sssp   $$$     :$; T$$P $^b.     $   dP"     `T :$P    `T       
