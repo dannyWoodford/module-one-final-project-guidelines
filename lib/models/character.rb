@@ -23,7 +23,7 @@ class Character < ActiveRecord::Base
     def self.all_characters_by_race
         prompt = TTY::Prompt.new
         race_array = Character.all.map { |people| people.race}
-        race = prompt.select("Choose a Race", race_array.uniq)
+        race = prompt.select("Choose a Race", race_array.uniq, per_page: 15)
         race_group = Character.all.select {|instance| instance.race == race }
         group_names = race_group.map { |guy| guy.name}
         person = prompt.select("Below is the list of each #{race}", group_names, per_page: 150)
@@ -92,6 +92,25 @@ class Character < ActiveRecord::Base
             puts "Name: #{name}"
             puts "Age: #{age}"
             puts "Race: #{race}"
+        end
+
+
+        
+    end
+
+    def self.ring_wraith
+        RingBearer.all.each do |bearer|
+            Character.all.find do |character|
+                Ring.all.find do |ring|
+                # binding.pry
+                    if bearer.character_id == character.id && character.race == "Man"
+                        if bearer.ring_id == ring.id && ring.name.include?("Ring of Men")
+                            character.race = "Wraith"
+                            # binding.pry
+                        end
+                    end
+                end
+            end
         end
     end
 

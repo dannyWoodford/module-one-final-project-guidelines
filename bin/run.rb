@@ -8,8 +8,8 @@ pid = fork{exec 'afplay', "concerning_hobbits.mp3"}
 
 prompt = TTY::Prompt.new
 
-gif_runner = Gif.new
-gif_runner.run_gif
+# gif_runner = Gif.new
+# gif_runner.run_gif
 
 
 
@@ -112,6 +112,7 @@ def self.open_book
         open_book
     elsif selection == "Create a new record of a Ring Bearer"
         RingBearer.create_ring_bearer
+        Character.ring_wraith
         open_book
     elsif selection == "Destroy a Ring of Power"
         Ring.delete_ring

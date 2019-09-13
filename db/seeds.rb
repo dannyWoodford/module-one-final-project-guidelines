@@ -135,6 +135,7 @@ wizard.map do |name|
     Character.create(name: name, age: age, race: "Wizard")
 end
 
+
 #END OF RACES ******************************************************************
 
 

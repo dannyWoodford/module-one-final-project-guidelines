@@ -9,7 +9,7 @@ class Ring < ActiveRecord::Base
         font = TTY::Font.new(:straight)
         ring_array = Ring.all.map {|ring| ring.name}
         # ham = ring_array.map{ |h|  font.write("#{h}")}
-        ring_name = prompt.select(" ", ring_array)
+        ring_name = prompt.select(" ", ring_array, per_page: 50)
         # binding.pry
         ring_info = Ring.all.find_by(name: ring_name)
         puts "Name: #{ring_info.name}"
@@ -30,7 +30,7 @@ class Ring < ActiveRecord::Base
         prompt = TTY::Prompt.new
         ring_array = Ring.all.select {|ring| ring.alignment == "Good"}
         good_ring_names = ring_array.map {|ring| ring.name}
-        ring_name = prompt.select(" ", good_ring_names)
+        ring_name = prompt.select(" ", good_ring_names, per_page: 50)
         #  binding.pry
         ring_info = Ring.all.find_by(name: ring_name)
         puts "Name: #{ring_info.name}"
@@ -51,7 +51,7 @@ class Ring < ActiveRecord::Base
         prompt = TTY::Prompt.new
         ring_array = Ring.all.select {|ring| ring.alignment == "Evil"}
         evil_ring_names = ring_array.map {|ring| ring.name}
-        ring_name = prompt.select(" ", evil_ring_names)
+        ring_name = prompt.select(" ", evil_ring_names, per_page: 50)
         # binding.pry
         ring_info = Ring.all.find_by(name: ring_name)
         puts "Name: #{ring_info.name}"
