@@ -11,6 +11,22 @@ prompt = TTY::Prompt.new
 # gif_runner = Gif.new
 # gif_runner.run_gif
 
+#WRAITH--------------------------------------------------------------------------
+RingBearer.all.each do |bearer|
+    Character.all.select do |character|
+        Ring.all.find do |ring|
+        # binding.pry
+            if bearer.character_id == character.id && character.race == "Man"
+                if bearer.ring_id == ring.id && ring.name.include?("Ring of Men")
+                    character.update(race: "Wraith")
+                end
+            end
+        end
+    end
+end
+
+----------------------------------------------------------------------
+
 
 
 intro_text = <<-INT
@@ -60,6 +76,8 @@ def self.open_book
     prompt = TTY::Prompt.new
 
     toc_text = <<-TOC
+
+
                                                         TABLE OF CONTENTS
 
                                                 ---------------------------------        

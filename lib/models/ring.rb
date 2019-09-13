@@ -112,6 +112,9 @@ class Ring < ActiveRecord::Base
         # new_name = prompt.ask ("Who currently has #{ring.name}?")
         # new_bearer = Character.all.find_or_create_by {|person| person.name == new_name}
         # RingBearer.create(character_)
+        puts ""
+        puts "#{ring.name} is now in #{new_location}!"
+        
     end
 
 
@@ -125,7 +128,7 @@ class Ring < ActiveRecord::Base
         ring_alignment  = prompt.select("Is #{ring_name} good or evil?", ["Good", "Evil"])
         ring_creation_date = prompt.ask ("What year was #{ring_name} made?")
         #  binding.pry
-        while ring_creation_date.to_i > 2020 or ring_creation_date.to_i < 1
+        while ring_creation_date.to_i > Time.now.year or ring_creation_date.to_i < 1
             # binding.pry
             puts "Invalid input. Please enter a valid year."
             ring_creation_date = prompt.ask ("What year was #{ring_name} made?")
@@ -136,7 +139,9 @@ class Ring < ActiveRecord::Base
 
     def self.delete_ring
         prompt = TTY::Prompt.new
+        puts ""
         puts "Welcome to Mount Doom"
+        puts "---------------------"
         choice = prompt.select("Do you wish to cast a Ring into the fire?", ["Yes, I want to destroy a ring!", "No, I'll be on my way"])
         active_rings = Ring.alive_rings
         if active_rings.length > 0 
@@ -167,8 +172,7 @@ class Ring < ActiveRecord::Base
                         end
                 end
             else
-                puts "You will be returned to the Table of Contents" 
-                open_book    
+                puts "You will be returned to the Table of Contents"    
             end
         else
             puts "There are no Rings of Power to destroy! Forge a new one."

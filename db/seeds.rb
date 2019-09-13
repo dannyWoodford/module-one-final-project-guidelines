@@ -201,3 +201,7 @@ RingBearer.create(character_id: random_characters[13].id, ring_id: r15.id)
 
 
 
+
+
+
+

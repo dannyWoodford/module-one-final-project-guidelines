@@ -52,7 +52,7 @@ class Character < ActiveRecord::Base
         #  binding.pry
          non_nil_bearers = latest_bearers.reject {|bearer| bearer == nil}  
         latest_ids = non_nil_bearers.map{|bearer| bearer.character_id}
-        #  binding.pry
+        # binding.pry
         character_objects =  latest_ids.map do |id_number|
                                  Character.all.select {|character| character.id == id_number}
                             end.flatten
@@ -81,16 +81,33 @@ class Character < ActiveRecord::Base
                 self.add_person
             end
         else
-            age = prompt.ask("How old is #{name}?")
-            while age.to_i < 1
-                puts "Invalid input. Please try again."
-                age = prompt.ask("How old is #{name}?")
-            end
             race = prompt.select("What race is #{name}?", ["Man", "Elf", "Wizard", "Hobbit", "Ent", "Dwarf", "Dragon", "Orc", "Uruk-Hai"], per_page: 15)
-            Character.create(name: name, age: age, race: race)
-            puts "Congrats on adding Dave to the History Books!"
+         
+            if race == "Man"
+                age_slider = prompt.slider("How old is #{name}?", max:150)
+            elsif race == "Elf"
+                age_slider = prompt.slider("How old is #{name}?", max:10_000, step: 100)
+            elsif race == "Wizard"
+                age_slider = prompt.slider("How old is #{name}?", max:10_000, step: 100)
+            elsif race == "Hobbit"
+                age_slider = prompt.slider("How old is #{name}?", max:150)
+            elsif race == "Ent"
+                age_slider = prompt.slider("How old is #{name}?", max:10_000, step: 100)
+            elsif race == "Dwarf"
+                age_slider = prompt.slider("How old is #{name}?", max:250, step:2)
+            elsif race == "Dragon"
+                age_slider = prompt.slider("How old is #{name}?", max:10_000, step: 250)
+            elsif race == "Orc"
+                age_slider = prompt.slider("How old is #{name}?", max:80)
+            elsif race == "Uruk-Hai"
+                age_slider = prompt.slider("How old is #{name}?", max:150)
+            end
+          
+            Character.create(name: name, age: age_slider, race: race)
+            puts ""
+            puts "Congrats on adding #{name} to the History Books!"
             puts "Name: #{name}"
-            puts "Age: #{age}"
+            puts "Age: #{age_slider}"
             puts "Race: #{race}"
         end
 
@@ -100,13 +117,14 @@ class Character < ActiveRecord::Base
 
     def self.ring_wraith
         RingBearer.all.each do |bearer|
-            Character.all.find do |character|
+            Character.all.select do |character|
                 Ring.all.find do |ring|
                 # binding.pry
                     if bearer.character_id == character.id && character.race == "Man"
                         if bearer.ring_id == ring.id && ring.name.include?("Ring of Men")
-                            character.race = "Wraith"
-                            # binding.pry
+                            character.update(race: "Wraith")
+                            puts " "
+                            puts " #{character.name} entered the Shadow World!"
                         end
                     end
                 end
