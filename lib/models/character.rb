@@ -93,6 +93,25 @@ class Character < ActiveRecord::Base
             puts "Age: #{age}"
             puts "Race: #{race}"
         end
+
+
+        
+    end
+
+    def self.ring_wraith
+        RingBearer.all.each do |bearer|
+            Character.all.find do |character|
+                Ring.all.find do |ring|
+                # binding.pry
+                    if bearer.character_id == character.id && character.race == "Man"
+                        if bearer.ring_id == ring.id && ring.name.include?("Ring of Men")
+                            character.race = "Wraith"
+                            # binding.pry
+                        end
+                    end
+                end
+            end
+        end
     end
 
 
