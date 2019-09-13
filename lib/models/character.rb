@@ -69,6 +69,8 @@ class Character < ActiveRecord::Base
     
     def self.add_person
         prompt = TTY::Prompt.new
+        puts "Tell us his/her story!"
+        puts ""
         name = prompt.ask("What is their name?")
         test_array = Character.all.select {|instance| instance.name.downcase == name.downcase }
         # binding.pry
