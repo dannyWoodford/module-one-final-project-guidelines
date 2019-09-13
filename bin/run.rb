@@ -7,7 +7,6 @@ pid = fork{exec 'afplay', "concerning_hobbits.mp3"}
 
 prompt = TTY::Prompt.new
 
-# gif_runner = Gif.new
 gif_runner = Gif.new
 gif_runner.run_gif
 
@@ -77,39 +76,44 @@ def self.open_book
                 open_book
             elsif character_selection == "By Race"
                 Character.all_characters_by_race
+                open_book
             elsif character_selection == "Active Ring Bearers"
                 Character.active_ring_bearers
+                open_book
             end
     elsif selection == 'History of the Rings of Power'
         puts 'History of the Rings of Power'
         ring_selection = prompt.select('', ['All', 'Good Rings', 'Evil Rings', 'Lost Rings'])
             if ring_selection == "All"
                 Ring.all_rings
+                open_book
             elsif ring_selection == 'Good Rings'
                 Ring.all_good_rings
+                open_book
             elsif ring_selection == 'Evil Rings'
                 Ring.all_evil_rings
+                open_book
             elsif ring_selection == 'Lost Rings'
                 Ring.all_lost_rings
+                open_book
             end
 
     elsif selection == "Forge a new Ring"
         Ring.forge_ring
+        open_book
     elsif selection == "Ring Found!"
-        
         Ring.ring_found
-
+        open_book
     elsif selection == "Add Person"
-        puts "Tell us his/her story!"
         Character.add_person
         open_book
     elsif selection == "Create a new record of a Ring Bearer"
         RingBearer.create_ring_bearer
-
+        open_book
     elsif selection == "Destroy a Ring of Power"
         Ring.delete_ring
+        open_book
     end
-
 
     pid = fork{ exec 'killall', "afplay" }
         
@@ -117,18 +121,9 @@ end
 
 
 
-self.open_book
-
-# ring = prompt.select("Choose a ring", ["The one Ring", "Vilya", "Narya", "Ring Of Men"])
-
-# # binding.pry
-# answer = Ring.find_by(name: "#{ring}")
-# # binding.pry
-# location = prompt.ask("You found this ring, where did you find it?")
-# answer.ring_found(location)
 
 
-puts "HELLO WORLD"
+
 
 
 
