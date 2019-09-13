@@ -1,5 +1,5 @@
 require 'colorize'
-class Gif 
+class Gif1
     def run_gif
 
 
@@ -112,7 +112,7 @@ class Gif
 
 
    text7 = <<-HAM
-#{text8} ___ . .  _                                                                                             
+ ___ . .  _                                                                                             
           |  |_| |_                                                                                             
           |  | | |_                                                                                             
                "T$$$$$$$b.                                          
@@ -1734,7 +1734,7 @@ gif30 = <<-HAM
 
        3.times do 
             i = 1
-            while i < 30
+            while i < 2
               photos2.each do |p|
                 puts p
                 sleep(0.13)
@@ -1749,9 +1749,7 @@ gif30 = <<-HAM
 
 end #class end
 
-gif_runner = Gif.new
 
-gif_runner.run_gif
 
 
 

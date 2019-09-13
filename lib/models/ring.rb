@@ -155,6 +155,8 @@ class Ring < ActiveRecord::Base
                 #RIDDLES********************************************************************
                 if ring_choice == "The One Ring"
                     Eagle.call_the_eagles
+                    deleted_ring = Ring.all.find {|ring| ring.name == ring_choice}
+                    deleted_ring.update(deleted: "Yes")
                 else                
                     deleted_ring = Ring.all.find {|ring| ring.name == ring_choice}
                     deleted_ring.update(deleted: "Yes")

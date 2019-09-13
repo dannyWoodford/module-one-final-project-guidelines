@@ -11,7 +11,7 @@ prompt = TTY::Prompt.new
 gif_runner = Gif.new
 gif_runner.run_gif
 
-gif_runner.run_gif
+
 
 intro_text = <<-INT
 
@@ -115,14 +115,15 @@ def self.open_book
     elsif selection == "Destroy a Ring of Power"
         Ring.delete_ring
         open_book
+    elsif selection == "Close the Book"
+        puts ""
+        pid = fork{ exec 'killall', "afplay" }
     end
-
-    pid = fork{ exec 'killall', "afplay" }
         
 end
 
 
-
+open_book
 
 
 

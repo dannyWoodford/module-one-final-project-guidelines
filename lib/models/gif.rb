@@ -132,7 +132,7 @@ text7 = <<-HAM
    HAM
 
 
-text8 = <<-HAM
+text8   = <<-HAM
          __ .  _                                                                                        
 "T$$$P"  |  | |_                                                                                        
  :$$$    |  | |_                                                                                        
@@ -4201,7 +4201,7 @@ photos2 = [gif1, gif2,gif3, gif4, gif5,
  while i < 2
    photos2.each do |p|
      puts p
-     sleep(0.09)
+     sleep(0.08)
      system "clear" 
      i +=1
    end
