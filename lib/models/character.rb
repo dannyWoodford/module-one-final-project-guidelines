@@ -52,7 +52,7 @@ class Character < ActiveRecord::Base
         #  binding.pry
          non_nil_bearers = latest_bearers.reject {|bearer| bearer == nil}  
         latest_ids = non_nil_bearers.map{|bearer| bearer.character_id}
-        # binding.pry
+        #  binding.pry
         character_objects =  latest_ids.map do |id_number|
                                  Character.all.select {|character| character.id == id_number}
                             end.flatten

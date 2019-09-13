@@ -1,6 +1,9 @@
 class Eagle
+
     def self.call_the_eagles
-                            eagle1 = <<-TTR
+        pid = fork{exec 'afplay', "play_eagles.mp3"}
+                            
+        eagle1 = <<-TTR
 
                                                     /T /I
                                                         / |/ | .-~/
@@ -450,5 +453,6 @@ i = 0
     end
 end
 
+pid = fork{ exec 'killall', "afplay" }
+
 end #end of Eagle class
-                                                  

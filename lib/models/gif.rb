@@ -4201,7 +4201,7 @@ photos2 = [gif1, gif2,gif3, gif4, gif5,
  while i < 2
    photos2.each do |p|
      puts p
-     sleep(0.08)
+     sleep(0.013)
      system "clear" 
      i +=1
    end

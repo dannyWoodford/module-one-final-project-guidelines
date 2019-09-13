@@ -18,7 +18,7 @@ intro_text = <<-INT
 
 
 
-                              *********************************************************************         
+                              .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.        
                                                    
                                         Ash nazg durbatulûk, ash nazg gimbatul,
                                         Ash nazg thrakutulûk agh burzum-ishi krimpatul.
@@ -32,7 +32,8 @@ intro_text = <<-INT
                                         One Ring to bring them all and in the darkness bind them
                                         In the Land of Mordor where the Shadows lie.
 
-                              *********************************************************************
+                               .:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.
+                               
 
 
                                                  Welcome Middle Earth Historian
