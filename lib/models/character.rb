@@ -23,7 +23,7 @@ class Character < ActiveRecord::Base
     def self.all_characters_by_race
         prompt = TTY::Prompt.new
         race_array = Character.all.map { |people| people.race}
-        race = prompt.select("Choose a Race", race_array.uniq)
+        race = prompt.select("Choose a Race", race_array.uniq, per_page: 15)
         race_group = Character.all.select {|instance| instance.race == race }
         group_names = race_group.map { |guy| guy.name}
         person = prompt.select("Below is the list of each #{race}", group_names, per_page: 150)
